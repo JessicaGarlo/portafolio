@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .container {
+         text-align: center;
+     }
+     .sparkle {
+         color: rgb(110, 157, 228);
+         animation: sparkle 1s steps(5, end);
+     }
+
+     @keyframes sparkle {
+         0%, 20%, 50%, 80%, 100% { color: rgb(255, 255, 255); }
+         40% { color: rgb(255, 0, 119); }
+         60% { color: red; }
+     }
+     body {
+         background-color: black;
+         color: white;
+         font-family: Arial, sans-serif;
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+     }
+     .navbar__link:hover {
+         text-decoration: underline;
+         color:aqua
+     }
+
+     .container {
+         width: 80%;
+         margin: 0 auto;
+     }
+
+     @keyframes example {
+         0%   {opacity: 0;}
+         100% {opacity: 1;}
+     }
+
+     .animated {
+         animation-name: example;
+         animation-duration: 4s;
+     }
+     
+     .home__image {
+         display: flex;
+         justify-content: center;
+         margin: 20px;
+     }
+     .home__image img {
+ 
+ width: 30%; 
+ height: auto; 
+ margin-top: 10px; 
+ margin-bottom: 10px;
+ margin-left: 10px; 
+ margin-right: 10px; 
+}
+.home__image .dialogo {
+ display: none;
+ position: top;
+ bottom: 5px;
+ left: 5px;
+ background: rgb(238, 138, 216);
+ color: rgb(1, 6, 10);
+ padding: 5px;
+ border-radius: 5px;
+ animation: fadeIn 1s;
+ font-family: Arial;
+ font-size: 25px; 
+ animation: mover 10s infinite;
+ width: 10%;
+ height: 10%;
+ font-style: italic;
+ 
+}
+.home__image .dialogo2 {
+ display: none;
+ top: 70%;
+ left: 5px;
+ background: rgb(238, 138, 216);
+ color: rgb(1, 6, 10);
+ padding: 5px;
+ border-radius: 5px;
+ animation: fadeIn 1s;
+ font-family: Arial;
+ font-size: 25px; 
+ animation: mover 10s infinite;
+ width: 10%;
+ height: 10%;
+ font-style: italic;
+ clear:left
+ 
+}
+
+.home__image:hover .dialogo2 {
+ display: block; float: unset;
+}
+.home__image:hover .dialogo {
+ display: block; float: unset;
+}
+
+@keyframes fadeIn {
+ 0% {opacity: 0;}
+ 100% {opacity: 1;}
+}
+#miFormulario {
+ background-color: #0b7af8;
+ padding: 20px;
+ border-radius: 15px;
+ width: 300px;
+ margin: 0 auto;
+ 
+}
+
+#miFormulario label {
+ font-weight: bold;
+ display: block;
+ margin-bottom: 5px;
+ 
+}
+
+#miFormulario input[type="text"],
+#miFormulario textarea {
+ width: 90%;
+ padding: 10px;
+ margin-bottom: 10px;
+ border: 1px solid #ddd;
+ border-radius: 5px;
+}
+
+#miFormulario input[type="submit"] {
+ background-color: #4CAF50;
+ color: white;
+ padding: 10px 20px;
+ border: none;
+ border-radius: 5px;
+ cursor: pointer;
+}
+
+#miFormulario input[type="submit"]:hover {
+ background-color: #45a049;
+}
+
+     
+ </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="animated sparkle">Soy Jessica,  Web FullStack Developer</h1>
+        <p class="animated sparkle">Te invito a ver mis proyectos mas recientes  💻 .</p>
+      </div>
+      
+      <header class="header">
+          <nav class="navbar grid--container">
+              <div id="nav" class="navbar__menu">
+                  <a href="#close"><i class="bx bx-x btn__close navbar__icon"></i></a>
+                  <ul id="navbarList" class="navbar__list">
+      
+                  </ul>
+              </div>
+          </nav>
+      </header>
+  
+      <script>
+          var menuItems = [
+              { text: 'Inicio', href: '#home' },
+              { text: 'Acerca de Mí', href: '#about' },
+              { text: 'Habilidades', href: '#skills' },
+              { text: 'Portafolio', href: '#projects' },
+              { text: 'Contacto', href: '#contact' }
+          ];
+  
+          var navbarList = document.getElementById('navbarList');
+  
+          for (var i = 0; i < menuItems.length; i++) {
+              var item = menuItems[i];
+  
+              var li = document.createElement('li');
+              li.className = 'navbar__item';
+  
+              var a = document.createElement('a');
+              a.className = 'navbar__link';
+              a.href = item.href;
+              a.textContent = item.text;
+  
+              li.appendChild(a);
+              navbarList.appendChild(li);
+          }
+      </script>
+          
+        <div class="navbar__toggles">
+          <div class="navbar__toggle--darkmode">
+            <input type="checkbox" id="darkmode-toggle" class="navbar__toggle--darkmode-input">
+            <label for="darkmode-toggle" class="navbar__toggle--darkmode-label">
+              <i class="bx bx-sun navbar__toggle--darkmode-sun"></i>
+              <i class="bx bx-moon navbar__toggle--darkmode-moon"></i>
+            </label>
+          </div>
+          <div class="navbar__toggle--language">
+            <input type="checkbox" id="language-toggle" class="navbar__toggle--language-input">
+            <label for="language-toggle" class="navbar__toggle--language-label">
+          </label></div>
+        </div>
+        <a href="#nav"><i class="bx bx-menu btn__open navbar__icon"></i></a>
+      </nav>
+    </header>
+  
+    <main>
+              <div class="home__image">
+                <img src="./foto.png" alt="Foto personal">
+                <div class="dialogo"> Hola ! 👋🏻 </div>
+                <div class="dialogo2">¿Cómo estás?</div>
+            </div>
+      </section>
+  </main>
+
+  
+          <ul class="home__social">
+            <li class="home__social-item">
+              <a class="home__social-link" href="#"><i class="bx bxl-linkedin"></i></a>
+            </li>
+            <li class="home__social-item">
+              <a class="home__social-link" href="#"><i class="bx bxl-whatsapp"></i></a>
+            </li>
+            <li class="home__social-item">
+              <a class="home__social-link" href="#"><i class="bx bxl-github"></i></a>
+            </li>
+            <li class="home__social-item">
+              <a class="home__social-link" href="#"><i class="bx bx-envelope"></i></a>
+            </li>
+          </ul>
+  
+          <div class="home__info">
+  
+            <h1 class="home__title">Hola, soy Jessica Garnica </h1>
+  
+            <p class="home__description">
+              Soy estudiante del bootcamp de Academlo  en FullStack Web Developer 
+            </p>
+          </div>
+  
+          <div class="home__buttons">
+            <button class="btn btn--primary" type="button">Descarga CV</button>
+          </div>
+        </div>
+  
+      </section>
+  
+      <section id="about" class="about section">
+        <h2 class="section__title">Acerca de Mí</h2>
+  
+        <div class="about__container grid--container">
+          <p class="about__description">
+            Me gusta siempre estar aprendiendo cosas nuevas sobre todo si se trata de tecnologia, ya que es con lo que siempre he trabajado, y siempre buscando la satisfaccion del cliente para el que trabajo; por lo cual me gusta estarme capacitando constantemente. Pero nada de esto es posible sin un buen trabajo en equipo.  
+
+          </p>
+  
+          <div class="about__cards">
+            <!--Card 1 -->
+            <div class="about__card">
+              <img class="about__card--img"  <img src="./Computadora1.png" alt="Trabajando en Soporte Tecnico">
+            </div>
+            <!--Card 2 -->
+            <div class="about__card">
+              <img class="about__card--<img class="about__card--img"  <img src="./Trabajo en equipo.png"" alt="Aprendiendo algo nuevo">
+            </div>
+            <!--Card 3 -->
+            <div class="about__card">
+              <img class="about__card--img" <img src="./Aprendiendo.png"" alt="Trabajando en equipo">
+            </div> 
+            
+          </div>
+  
+        </div>
+      </section>
+      <section id="skills" class="skills section">
+        <h2 class="section__title">Habilidades</h2>
+  
+        <div class="skills__container grid--container">
+          <p class="skills__description">
+            Estoy aprendiendo sobre JS, HTMLS, CSS y pronto React. 
+          </p>
+  
+          <div class="skills__wrapper">
+            <div class="skills__cards">
+              <!--Card 1 -->
+              <input type="radio" name="slide" id="c1" checked="" class="skills__input">
+              <label for="c1" class="skills__card">
+                <div class="skills__card-row">
+                  <i class="bx bxl-html5"></i>
+                  <div class="skills__description">
+                    <h3 class="skills__card-title">HTML</h3>
+                    <p> Desde hace dias he estado practicando HTML, claro ejemplo es este portafolio y pronto mis primeras paginas web </p>
+                  </div>
+                </div>
+              </label>
+              <!--Card 2 -->
+              <input type="radio" name="slide" id="c2" checked="" class="skills__input">
+              <label for="c2" class="skills__card">
+                <div class="skills__card-row">
+                  <i class="bx bxl-css3"></i>
+                  <div class="skills__description">
+                    <h3 class="skills__card-title">CSS3</h3>
+                    <p> Con CSS estoy aprendiendo a como dar estilo a mi pagina web e inclusive meter animaciones para crear un entorno mas interactivo </p>
+                  </div>
+                </div>
+              </label>
+              <!--Card 3 -->
+              <input type="radio" name="slide" id="c3" checked="" class="skills__input">
+              <label for="c3" class="skills__card">
+                <div class="skills__card-row">
+                  <i class="bx bxl-javascript"></i>
+                  <div class="skills__description">
+                    <h3 class="skills__card-title">Javascript</h3>
+                    <p> No existe pagina web que detras no tenga un poco de codigo, y esta no sera la excepcion, el codigo nos permite un funcionamiento mas limpio de como deseamos trabaje nuestra pagina </p>
+                  </div>
+                </div>
+              </label>
+              <!--Card 4 -->
+              <input type="radio" name="slide" id="c4" checked="" class="skills__input">
+              <label for="c4" class="skills__card">
+                <div class="skills__card-row">
+                  <i class="bx bxl-react"></i>
+                  </div>
+                </div>
+              </label>
+            </div>
+          </div>
+          <div class="skills__tags">
+            <h3 class="skills__tags-title">Habilidades Blandas</h3>
+            <div class="skills__tags-container">
+              <span class="skills__tag">Aprendizaje Rapido ,</span>
+              <span class="skills__tag"> Compromiso con cada proyecto que hago, </span>
+              <span class="skills__tag">Creatividad, </span>
+              <span class="skills__tag">Puntualidad, </span>
+              <span class="skills__tag">Proactivo</span>
+              <span class="skills__tag">Autodidacta</span>
+            </div>
+          </div>
+        </div>
+        
+      </section>
+  
+      <section id="projects" class="projects section">
+        <h2 class="section__title">Proyectos</h2>
+  
+        <div class="projects__container grid--container">
+          <div class="projects__project">
+            <div class="projects__inner grid--container">
+              <div class="projects__image">
+                <img src="./Venta en linea.png" alt="Tienda en Linea de Ropa">
+              </div>
+  
+              <div class="projects__info">
+                <h3 class="projects__name">Proyecto 1</h3>
+                <p class="projects__description">
+                  En este proyecto busque crear una pagina de venta en linea, en especifico de ropa y bolsos de mujer. 
+                </p>
+  
+                <div class="projects__buttons">
+                  <button class="btn projects__button" type="button">
+                    VER DEMO
+                  </button>
+                  <button class="btn projects__button" type="button">
+                    VER CÓDIGO
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+         
+  
+        
+      </section>
+  
+      <section id="contact" class="contact section">
+        <h2 class="section__title">Contacto</h2>
+  
+        <div class="contact__container grid--container">
+          <div class="contact__info">
+            <h3 class="contact__info-title">Información de contacto</h3>
+            <p class="contact__info-description">
+              Y porque no charlamos un poco mas sobre lo que esperas de mi y necesitas realice en tu proyecto? Aca te dejo mis redes para que me contactes ☎️
+            </p>
+  
+            <address class="contatc__info-data">
+              <div class="contact__info-item">
+                <i class="bx bxl-whatsapp"></i>
+  
+                <span class="contact__info-number">
+                  <a href="https://wa.me/524499409854?text=Tu%20Mensaje%20De%20Texto" target="_blank">Enviar mensaje a
+                    WhatsApp</a>
+                </span>
+              </div>
+  
+              <div class="contact__info-item">
+                <i class="bx bx-phone"></i>
+  
+                <span class="contact__info-number">
+                  <a href="tel: +52 4499409854"/a> +52 4499409854 </a>
+                </span>
+              </div>
+  
+              <div class="contact__info-item">
+                <i class="bx bxs-envelope"></i>
+  
+                <span class="contact__info-mail">
+                  <a id="mail" href="jessgarlo009t@gmail.com"> jessgarlo009@gmail.com </a>
+                </span>
+              </div>
+  
+              <div class="contact__info-item">
+                <i class="bx bx-map"></i>
+  
+                <span class="contact__info-map"> Aguascalientes, Mexico. </span>
+              </div>
+            </address>
+          </div>
+  
+          <form action="/ruta/a/tu/servidor" method="post" id="miFormulario">
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" id="nombre" name="nombre"><br>
+            <label for="asunto">Asunto:</label><br>
+            <input type="text" id="asunto" name="asunto"><br>
+            <label for="mensaje">Mensaje:</label><br>
+            <textarea id="mensaje" name="mensaje"></textarea><br>
+            <input type="submit" value="Enviar">
+        </form>
+        
+          </div>
+        </div>
+      </section>
+    </main>
+  
+    <footer class="footer section">
+      <div class="footer__container grid--container">
+        <div class="footer__info">
+          <h3 class="footer__title">Jessica Garnica</h3>
+          <p class="footer__description">
+            Soy estudiante de Academlo, en el bootcamp de Desarrollador Web Full Stack 
+          </p>
+        </div>
+  
+        <div class="footer__social">
+          <h3 class="footer__title">Redes Sociales</h3>
+  
+          <ul class="footer__social-list">
+            <li class="footer__social-item">
+              <a class="footer__social-link" href="#"><i class="bx bxl-facebook"></i></a>
+            </li>
+  
+            <li class="footer__social-item">
+              <a class="footer__social-link" href="#"><i class="bx bxl-instagram"></i></a>
+            </li>
+  
+            <li class="footer__social-item">
+              <a class="footer__social-link" href="#"><i class="bx bxl-twitter"></i></a>
+            </li>
+  
+            <li class="footer__social-item">
+              <a class="footer__social-link" href="#"><i class="bx bxl-linkedin"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+  
+      <p class="footer__copy">© 2024, Todos los derechos reservados</p>
+    </footer>
+  
+  
+  </body>
